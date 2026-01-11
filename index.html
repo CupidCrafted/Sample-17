@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Valentine Menu 🍽️</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #1a1a1a; /* Dark Luxury */
+            color: #D4AF37; /* Gold */
+            font-family: 'Times New Roman', serif;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .menu-border {
+            border: 2px solid #D4AF37;
+            padding: 10px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .menu-content {
+            border: 1px solid #D4AF37;
+            padding: 30px 15px;
+            text-align: center;
+        }
+
+        h1 { font-size: 2rem; border-bottom: 1px solid #D4AF37; padding-bottom: 10px; }
+        h2 { font-size: 1.2rem; margin-top: 30px; letter-spacing: 2px; }
+
+        .item {
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1rem;
+        }
+
+        input[type="checkbox"] {
+            accent-color: #D4AF37;
+            transform: scale(1.5);
+        }
+
+        #submitBtn {
+            margin-top: 40px;
+            background: #D4AF37;
+            color: black;
+            border: none;
+            padding: 15px 30px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        #receipt {
+            display: none;
+            background: white;
+            color: black;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-border">
+        <div class="menu-content" id="mainMenu">
+            <p>February 14, 2026</p>
+            <h1>VALENTINE'S MENU</h1>
+            
+            <h2>STARTERS</h2>
+            <div class="item"><span>Sunset Walk at Labadi</span> <input type="checkbox"></div>
+            <div class="item"><span>Ice Cream Date</span> <input type="checkbox"></div>
+
+            <h2>MAIN COURSE</h2>
+            <div class="item"><span>Fancy Dinner Out</span> <input type="checkbox"></div>
+            <div class="item"><span>Home Cooked Meal</span> <input type="checkbox"></div>
+
+            <h2>DESSERT</h2>
+            <div class="item"><span>Movie Night</span> <input type="checkbox"></div>
+            <div class="item"><span>Late Night Drive</span> <input type="checkbox"></div>
+
+            <button id="submitBtn" onclick="order()">PLACE ORDER</button>
+        </div>
+
+        <div id="receipt">
+            <h2 style="color: black; margin-top: 0;">Order Confirmed! ✅</h2>
+            <p>Your choices have been sent to your partner. They are getting ready for our perfect day!</p>
+            <p style="font-size: 0.8rem; border-top: 1px dashed #000; padding-top: 10px;">Total Price: My Endless Love</p>
+        </div>
+    </div>
+
+    <script>
+        function order() {
+            document.getElementById('mainMenu').style.display = 'none';
+            document.getElementById('receipt').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
