@@ -111,11 +111,6 @@
         // 3. Create the message
         const text = "Hi! I just placed my order for: " + foodChoice + ". I can't wait! ❤️";
         
-        // 4. Create the WhatsApp link
-        const whatsappUrl = "https://wa.me/" + buyerPhone + "?text=" + encodeURIComponent(text);
-
-        // 5. Open WhatsApp (This is the part that does the work!)
-        window.open(whatsappUrl, '_blank');
 
         // 6. Show the "Order Confirmed" receipt on your screen
         document.getElementById('receipt').style.display = 'block';
