@@ -86,17 +86,7 @@
             <div class="item"><span>Late Night Drive</span> <input type="checkbox"></div>
 
             <button id="submitBtn" onclick="order()">PLACE ORDER</button>
-            function order() {
-    const food = document.getElementById('foodSelect')?.value || "None";
-    const buyerPhone = "233XXXXXXXXX"; // The Buyer's number in international format
-    
-    // Create the message
-    const message = `Hi! I just placed my order: I want ${food}! ❤️`;
-    
-    // Open WhatsApp
-    window.open(`https://wa.me/${buyerPhone}?text=${encodeURIComponent(message)}`, '_blank');
-}
-
+            
         </div>
 
         <div id="receipt">
@@ -110,7 +100,29 @@
         function order() {
             document.getElementById('mainMenu').style.display = 'none';
             document.getElementById('receipt').style.display = 'block';
-        }
+       <script>
+    function order() {
+        // 1. Get the choice from your dropdown or input
+        const foodChoice = document.getElementById('foodSelect')?.value || "something delicious";
+        
+        // 2. Define the Buyer's WhatsApp number (ONLY numbers!)
+        const buyerPhone = "233248343980"; 
+        
+        // 3. Create the message
+        const text = "Hi! I just placed my order for: " + foodChoice + ". I can't wait! ❤️";
+        
+        // 4. Create the WhatsApp link
+        const whatsappUrl = "https://wa.me/" + buyerPhone + "?text=" + encodeURIComponent(text);
+
+        // 5. Open WhatsApp (This is the part that does the work!)
+        window.open(whatsappUrl, '_blank');
+
+        // 6. Show the "Order Confirmed" receipt on your screen
+        document.getElementById('receipt').style.display = 'block';
+        document.getElementById('submitBtn').style.display = 'none';
+    }
+</script>
+ }
     </script>
 </body>
 </html>
