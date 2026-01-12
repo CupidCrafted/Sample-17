@@ -86,6 +86,17 @@
             <div class="item"><span>Late Night Drive</span> <input type="checkbox"></div>
 
             <button id="submitBtn" onclick="order()">PLACE ORDER</button>
+            function order() {
+    const food = document.getElementById('foodSelect')?.value || "None";
+    const buyerPhone = "233XXXXXXXXX"; // The Buyer's number in international format
+    
+    // Create the message
+    const message = `Hi! I just placed my order: I want ${food}! ❤️`;
+    
+    // Open WhatsApp
+    window.open(`https://wa.me/${buyerPhone}?text=${encodeURIComponent(message)}`, '_blank');
+}
+
         </div>
 
         <div id="receipt">
